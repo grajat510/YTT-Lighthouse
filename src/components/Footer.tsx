@@ -85,8 +85,11 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#22201c]"
               >
-                lighthousekrishna.com
+                Other Programs at Light House
               </a>
+              <span className="block text-[10px] text-[#8a8375]">
+                MTC, Karma Yoga at PANKH &amp; wellness retreats
+              </span>
             </li>
           </ul>
         </div>

@@ -36,12 +36,12 @@ export default function Hero() {
             srcSet={mobile}
             fetchPriority="high"
             decoding="async"
-            className="img-subtle animate-video-fade-in absolute inset-0 h-full w-full object-cover"
+            className="img-subtle hero-photo absolute inset-0 h-full w-full object-cover will-change-transform"
             style={{ ...style, objectFit: "cover" }}
           />
         </picture>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/5" />
 
         <div className="absolute inset-x-0 bottom-0 px-6 pb-10 md:px-10 md:pb-16">
           <Reveal>
