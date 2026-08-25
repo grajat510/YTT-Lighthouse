@@ -7,13 +7,13 @@ const TEACHERS = [
   {
     name: "Sarvadaman Banerji",
     role: "Founder — Krishnaji",
-    bio: "Enlightened at the age of 36 and in meditation for over thirty years. Once a well-known actor — best remembered for playing Lord Krishna in Ramanand Sagar's Shri Krishna and Adi Shankaracharya in the National Award-winning film — he founded Light House to help others connect with the Divine Energy.",
+    bio: "Enlightened at the age of 36, Krishnaji has lived in awareness and meditation for over thirty years. He built Light House with one clear intention: whosoever comes here must go back connected to the Divine Energy and be a Light unto oneself. He teaches the art of spontaneous meditation (Cosmutation).",
     img: "/teacher-krishnaji-v2.jpg",
   },
   {
     name: "Alankrita Banerjee",
-    role: "Programme Director · Founder, PANKH",
-    bio: "Founder of PANKH — The Creative School. Has conducted over 100 meditation and stress-management workshops for international groups, institutions and corporates, and authored five books on the philosophies of life. Specialises in Yogic Philosophy and Kundalini Yoga.",
+    role: "Programme Director, YTT and YRT",
+    bio: "Has conducted over 100 meditation and stress-management workshops for international groups, institutions and corporates, and authored five books on the philosophies of life. Specialises in Yogic Philosophy and Kundalini Yoga.",
     img: "/teacher-ankita.jpg",
   },
   {

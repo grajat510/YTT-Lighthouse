@@ -11,6 +11,8 @@ import {
   BookOpen,
   Activity,
   Sparkles,
+  Pause,
+  Leaf,
   type LucideIcon,
 } from "lucide-react";
 import { Timeline } from "./ui/timeline";
@@ -23,17 +25,12 @@ const PERIOD_ICON: Record<string, LucideIcon> = {
   Evening: Moon,
 };
 
-const PERIOD_EMOJI: Record<string, string> = {
-  Morning: "☀️",
-  Midday: "🌤️",
-  Afternoon: "🌇",
-  Evening: "🌙",
-};
-
 function getActivityIcon(activity: string): LucideIcon {
   const a = activity.toLowerCase();
-  if (a.includes("shatkarma") || a.includes("cleans")) return Droplet;
+  if (a.includes("shatkarma") || a.includes("cleans") || a.includes("neti")) return Droplet;
   if (a.includes("pranayam")) return Wind;
+  if (a.includes("break") && !a.includes("breakfast")) return Pause;
+  if (a.includes("free") || a.includes("nature") || a.includes("contemplation")) return Leaf;
   if (a.includes("tea")) return Coffee;
   if (a.includes("breakfast")) return Coffee;
   if (a.includes("lunch") || a.includes("dinner")) return Soup;
@@ -41,7 +38,8 @@ function getActivityIcon(activity: string): LucideIcon {
   if (a.includes("alignment")) return Activity;
   if (a.includes("meditat") || a.includes("kriya") || a.includes("aura") || a.includes("mantra"))
     return Sparkles;
-  if (a.includes("yoga") || a.includes("asana")) return Flower2;
+  if (a.includes("yoga") || a.includes("asana") || a.includes("hatha") || a.includes("ashtanga"))
+    return Flower2;
   return Activity;
 }
 
@@ -50,7 +48,6 @@ export default function DailySchedule({ schedule }: { schedule: NonNullable<Cour
 
   return (
     <>
-      {/* Mobile: card-per-period design */}
       <div className="space-y-6 md:hidden">
         {groups.map((group) => {
           const PeriodIcon = PERIOD_ICON[group.period] ?? Sun;
@@ -97,11 +94,10 @@ export default function DailySchedule({ schedule }: { schedule: NonNullable<Cour
         })}
       </div>
 
-      {/* Desktop: original animated growing-line timeline */}
       <div className="hidden md:block">
         <Timeline
           data={groups.map((group) => ({
-            title: `${PERIOD_EMOJI[group.period] ?? ""} ${group.period}`.trim(),
+            title: group.period,
             content: (
               <div key={group.period} className="space-y-3">
                 {group.rows.map((row) => (

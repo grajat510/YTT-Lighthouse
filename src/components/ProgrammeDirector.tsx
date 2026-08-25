@@ -27,7 +27,7 @@ export default function ProgrammeDirector() {
           </RevealImage>
           <p className="font-display mt-4 text-lg">Alankrita Banerjee</p>
           <p className="mt-1 text-xs tracking-widest-plus uppercase text-[#8a8375]">
-            Programme Director — YTT, YRT · Founder, PANKH
+            Programme Director — YTT and YRT
           </p>
         </Reveal>
 

@@ -7,6 +7,17 @@ const ENTER_MS = 700;
 const HOLD_MS = 2200;
 const FADE_MS = 500;
 
+function isAdsTraffic() {
+  if (typeof window === "undefined") return false;
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("gad") === "1") return true;
+  if (params.get("gclid")) return true;
+  const utm = params.get("utm_medium")?.toLowerCase();
+  if (utm === "cpc" || utm === "ppc" || utm === "paid") return true;
+  if (params.get("utm_source")?.toLowerCase() === "google") return true;
+  return false;
+}
+
 export default function SplashScreen() {
   const [visible, setVisible] = useState(true);
   const [entered, setEntered] = useState(false);
@@ -14,6 +25,12 @@ export default function SplashScreen() {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
+    if (isAdsTraffic()) {
+      setVisible(false);
+      document.body.style.overflow = "";
+      return;
+    }
+
     document.body.style.overflow = "hidden";
     const enterTimer = setTimeout(() => setEntered(true), 30);
     const breatheTimer = setTimeout(() => setBreathing(true), ENTER_MS);
