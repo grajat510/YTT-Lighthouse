@@ -91,6 +91,36 @@ export default function Footer() {
                 MTC, Karma Yoga at PANKH &amp; wellness retreats
               </span>
             </li>
+            <li>
+              <a
+                href="https://lighthousekrishna.com/masters-training-course/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#22201c]"
+              >
+                Master&rsquo;s Training Course
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://lighthousekrishna.com/alankritabanerjee/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#22201c]"
+              >
+                Courses by Alankrita Banerjee
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://lighthousekrishna.com/about-light-house/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#22201c]"
+              >
+                About Light House
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -129,12 +159,32 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://instagram.com/lighthousekrishna"
+                href="https://www.instagram.com/lighthousekrishna/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#22201c]"
               >
-                @lighthousekrishna
+                Instagram — @lighthousekrishna
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/lighthousekrishna/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#22201c]"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCPZMwJQQ12O3x_a_xfWtn0Q"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#22201c]"
+              >
+                YouTube
               </a>
             </li>
           </ul>
