@@ -4,13 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 
 const LEFT_LINKS = [
-  { label: "Courses", href: "/#destinations" },
-  { label: "Curriculum", href: "/#curriculum" },
+  { label: "YTT", href: "/#ytt" },
+  { label: "YRT", href: "/#yrt" },
 ];
 
 const RIGHT_LINKS = [
-  { label: "About Us", href: "/about" },
-  { label: "Apply", href: "/programs" },
+  { label: "About", href: "/about" },
+  {
+    label: "Apply",
+    href: "https://lighthousekrishna.com/course-registration/yoga-teacher-training/",
+    external: true,
+  },
 ];
 
 export default function Nav() {
@@ -35,7 +39,7 @@ export default function Nav() {
           href="/"
           className="font-display absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-xl tracking-widest-plus uppercase md:text-2xl"
         >
-          Lighthouse YTT
+          Light House
         </Link>
 
         <nav className="hidden gap-10 text-xs tracking-widest-plus uppercase md:flex">
@@ -43,6 +47,9 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer", "data-conversion": "apply" }
+                : {})}
               className="opacity-85 transition-opacity duration-300 hover:opacity-100"
             >
               {link.label}
@@ -72,7 +79,14 @@ export default function Nav() {
       {open && (
         <nav className="flex flex-col gap-6 bg-[#f7f4ee] px-6 pb-8 text-sm tracking-widest-plus uppercase md:hidden">
           {[...LEFT_LINKS, ...RIGHT_LINKS].map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              {...("external" in link && link.external
+                ? { target: "_blank", rel: "noopener noreferrer", "data-conversion": "apply" }
+                : {})}
+            >
               {link.label}
             </a>
           ))}

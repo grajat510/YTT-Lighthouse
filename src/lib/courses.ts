@@ -45,29 +45,34 @@ export type Course = {
   applyHref?: string;
 };
 
-const YTT_APPLY_HREF =
+export const YTT_APPLY_HREF =
   "https://lighthousekrishna.com/course-registration/yoga-teacher-training/";
 const MTC_APPLY_HREF =
   "https://lighthousekrishna.com/course-registration/masters-training-course/";
 
-const YTT_SCHEDULE = [
-  { time: "07:00 – 07:30 AM", activity: "Shatkarma (first 4 days)", period: "Morning" },
-  { time: "07:30 – 09:00 AM", activity: "Vinyasa Yoga", period: "Morning" },
-  { time: "09:00 – 09:30 AM", activity: "Pranayam", period: "Morning" },
-  { time: "10:00 – 10:30 AM", activity: "Breakfast", period: "Morning" },
-  { time: "11:00 – 11:45 AM", activity: "Anatomy", period: "Midday" },
-  { time: "11:45 – 12:30 PM", activity: "Yoga Alignment", period: "Midday" },
-  { time: "01:00 – 02:00 PM", activity: "Lunch", period: "Midday" },
-  { time: "03:30 – 04:00 PM", activity: "Tea Break", period: "Afternoon" },
-  { time: "04:00 – 05:00 PM", activity: "Yoga Philosophy", period: "Afternoon" },
-  { time: "05:00 – 06:30 PM", activity: "Hatha Yoga", period: "Evening" },
-  { time: "06:30 – 07:30 PM", activity: "Meditation / Mantra Chanting / Aura Healing / Kriya", period: "Evening" },
-  { time: "08:00 – 09:00 PM", activity: "Dinner", period: "Evening" },
+/** Official lighthousekrishna.com timetable (overrides brochure 7:00am table). Tentative. */
+export const YTT_SCHEDULE = [
+  { time: "06:30 – 08:00 AM", activity: "Hatha Yoga and Pranayama", period: "Morning" },
+  { time: "09:00 – 09:30 AM", activity: "Breakfast", period: "Morning" },
+  { time: "10:30 – 11:30 AM", activity: "Yoga Anatomy", period: "Midday" },
+  { time: "12:00 – 01:00 PM", activity: "Yoga Alignment", period: "Midday" },
+  { time: "01:00 – 01:30 PM", activity: "Lunch", period: "Midday" },
+  { time: "01:30 – 04:00 PM", activity: "Break", period: "Midday" },
+  { time: "04:00 – 05:15 PM", activity: "Ashtanga Vinyasa Yoga and Shatkarma", period: "Afternoon" },
+  { time: "05:15 – 05:30 PM", activity: "Tea", period: "Afternoon" },
+  { time: "05:30 – 06:30 PM", activity: "Philosophy", period: "Afternoon" },
+  { time: "06:30 – 07:30 PM", activity: "Meditation", period: "Evening" },
+  { time: "07:30 – 08:00 PM", activity: "Dinner", period: "Evening" },
 ];
 
-const RETREAT_SCHEDULE = [
+/** Official YRT timetable from lighthousekrishna.com. Tentative. */
+export const RETREAT_SCHEDULE = [
   { time: "09:00 – 09:30 AM", activity: "Breakfast", period: "Morning" },
-  { time: "09:30 AM – 01:00 PM", activity: "Free time — contemplation, nature walks, exploration", period: "Morning" },
+  {
+    time: "09:30 AM – 01:00 PM",
+    activity: "Free — contemplation, nature walks, work, or explore the place",
+    period: "Morning",
+  },
   { time: "01:00 – 01:30 PM", activity: "Lunch", period: "Midday" },
   { time: "01:30 – 04:00 PM", activity: "Break", period: "Midday" },
   { time: "04:00 – 05:15 PM", activity: "Ashtanga Vinyasa Yoga", period: "Afternoon" },
@@ -89,7 +94,6 @@ export const COURSES: Course[] = [
     title: "100-Hour YTT",
     scheduleNote: "Batches Monthly",
     batches: [
-      { range: "01 – 15", month: "November", year: 2026, startDate: "2026-11-01" },
       { range: "01 – 15", month: "February", year: 2027, startDate: "2027-02-01" },
     ],
     stats: [
@@ -153,14 +157,13 @@ export const COURSES: Course[] = [
     slug: "200-hour-ytt",
     img: "/curriculum-asana.jpg",
     alt: "Graduates holding their Certificate of Completion at Light House",
-    secondaryImg: "/course-graduation-2.jpg",
+    secondaryImg: "/course-graduation.jpg",
     secondaryAlt: "Graduates holding their Light House certificates with marigold garlands",
     imgPositionClass: "object-top",
     eyebrow: "Advanced Certification",
     title: "200-Hour YTT",
     scheduleNote: "Batches Monthly",
     batches: [
-      { range: "01 – 20", month: "November", year: 2026, startDate: "2026-11-01" },
       { range: "01 – 20", month: "February", year: 2027, startDate: "2027-02-01" },
     ],
     stats: [
@@ -224,14 +227,13 @@ export const COURSES: Course[] = [
     slug: "15-day-retreat",
     img: "/course-meditation.jpg",
     alt: "Students in seated meditation at Light House",
-    secondaryImg: "/course-havan.jpg",
-    secondaryAlt: "A havan prayer ceremony with marigolds at Light House",
+    secondaryImg: "/course-prayer.jpg",
+    secondaryAlt: "A prayer ceremony with marigolds at Light House",
     imgPositionClass: "object-top",
     eyebrow: "Retreat",
     title: "15-Day Yoga Retreat",
     scheduleNote: "Batches Monthly",
     batches: [
-      { range: "01 – 15", month: "November", year: 2026, startDate: "2026-11-01" },
       { range: "01 – 15", month: "February", year: 2027, startDate: "2027-02-01" },
     ],
     stats: [
@@ -287,14 +289,14 @@ export const COURSES: Course[] = [
     slug: "20-day-retreat",
     img: "/course-prayer.jpg",
     alt: "Evening prayer ceremony with marigold garlands at Light House",
-    secondaryImg: "/course-meditation-2.jpg",
+    secondaryImg: "/practice-meditation.jpg",
     secondaryAlt: "Students in a group meditation session at Light House",
     imgPositionClass: "object-top",
     eyebrow: "Retreat",
     title: "20-Day Yoga Retreat",
     scheduleNote: "Batches Monthly",
     batches: [
-      { range: "01 – 20", month: "November", year: 2026, startDate: "2026-11-01" },
+      { range: "01 – 20", month: "February", year: 2027, startDate: "2027-02-01" },
     ],
     stats: [
       { value: "20", label: "Days" },
@@ -302,21 +304,21 @@ export const COURSES: Course[] = [
       { value: "Cert.", label: "Of Appreciation" },
     ],
     paragraphs: [
-      "An extended stay along the Ganges, built around Hatha yoga, evening prayers and mantra chanting, with the same relaxed rhythm as our 15-day retreat.",
+      "An extended stay along the Ganges, built around Ashtanga Vinyasa yoga, philosophy and meditation, with the same relaxed rhythm as our 15-day retreat.",
       "All participants are awarded a certificate of appreciation by Light House on successful completion.",
     ],
     highlights: [
       {
-        title: "Hatha Yoga",
-        description: "Practice slow, deliberate postures that build strength and steadiness.",
-        tags: ["Physical Strength", "Mind-Body Balance", "Holistic Practice", "Present Awareness"],
+        title: "Ashtanga Vinyasa Yoga",
+        description: "Move through a flowing, breath-linked sequence of postures each day.",
+        tags: ["Physical Strength", "Breath Awareness", "Mind-Body Balance", "Holistic Practice"],
         icon: "flower",
       },
       {
-        title: "Evening prayers and mantra chanting",
-        description: "Wind down each day with communal chanting and quiet devotion.",
-        tags: ["Sacred Knowledge", "Community Care", "Inner Growth", "Present Awareness"],
-        icon: "moon",
+        title: "Yoga Philosophy",
+        description: "Reflect on the deeper teachings behind the practice, at a relaxed pace.",
+        tags: ["Sacred Knowledge", "Self-Discovery", "Ancient Wisdom", "Inner Growth"],
+        icon: "book",
       },
       {
         title: "Meditation",

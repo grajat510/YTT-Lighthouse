@@ -1,10 +1,13 @@
 import Reveal from "./Reveal";
 
+const APPLY_HREF =
+  "https://lighthousekrishna.com/course-registration/yoga-teacher-training/";
+
 const SESSIONS = [
-  { program: "100-Hour YTT", duration: "15 days", dates: "01 – 15 November 2026" },
-  { program: "200-Hour YTT", duration: "20 days", dates: "01 – 20 November 2026" },
-  { program: "15-Day Yoga Retreat", duration: "15 days", dates: "01 – 15 November 2026" },
-  { program: "20-Day Yoga Retreat", duration: "20 days", dates: "01 – 20 November 2026" },
+  { program: "100-Hour YTT", duration: "15 days", dates: "01 – 15 February 2027" },
+  { program: "200-Hour YTT", duration: "20 days", dates: "01 – 20 February 2027" },
+  { program: "15-Day Yoga Retreat", duration: "15 days", dates: "01 – 15 February 2027" },
+  { program: "20-Day Yoga Retreat", duration: "20 days", dates: "01 – 20 February 2027" },
 ];
 
 export default function CourseCalendar() {
@@ -21,8 +24,8 @@ export default function CourseCalendar() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-[#57534a]">
-            Registrations are open. The next Master&apos;s Training Course
-            runs 25–29 July 2026.
+            Next confirmed batches: February 2027. Apply via the official
+            registration form.
           </p>
         </div>
       </Reveal>
@@ -48,7 +51,10 @@ export default function CourseCalendar() {
                   <td className="py-5 pr-6 text-[#57534a]">{session.dates}</td>
                   <td className="py-5">
                     <a
-                      href="#reserve"
+                      href={APPLY_HREF}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-conversion="apply"
                       className="text-sm text-[#33456a] underline decoration-[#33456a]/40 underline-offset-4 transition-colors hover:decoration-[#33456a]"
                     >
                       Apply

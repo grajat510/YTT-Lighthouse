@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SplashScreen from "@/components/SplashScreen";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -18,9 +19,12 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Light House — Yoga Teacher Training, Rishikesh",
+  title: {
+    default: "Light House — Yoga Teacher Training & Retreats, Rishikesh",
+    template: "%s — Light House",
+  },
   description:
-    "Light House is a yoga teacher training and retreat centre on the banks of the Ganges in Rishikesh, founded by Krishnaji.",
+    "Yoga Teacher Training and Yoga Retreats at Light House on the banks of the Ganges in Rishikesh, founded by Sarvadaman Banerji.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -30,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f7f4ee] text-[#22201c]">
+        <Analytics />
         <SplashScreen />
         <Nav />
         <div className="flex min-w-0 flex-1 flex-col overflow-x-clip">

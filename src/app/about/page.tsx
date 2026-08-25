@@ -7,7 +7,7 @@ import { shimmerPlaceholder } from "@/lib/placeholder";
 export const metadata: Metadata = {
   title: "About Us — Light House",
   description:
-    "The story of Light House and its founder, Krishna Sarvadaman Banerji.",
+    "The story of Light House and its founder, Sarvadaman Banerji.",
 };
 
 export default function AboutPage() {
@@ -46,23 +46,20 @@ export default function AboutPage() {
             Enlightenment or Samadhi, which is neither a physical exercise
             nor an intellectual understanding but freedom from fear and
             greed at the root. Light House is a yoga place founded by
-            Krishna Sarvadaman Banerjee and is essentially devoted to the
-            Art of Spontaneous Meditation (Master&rsquo;s Training Course),
+            Krishna Sarvadaman Banerji and is essentially devoted to Yoga
+            Teacher Training and Yoga Retreats on the banks of the Ganges,
+            alongside the Art of Spontaneous Meditation (Cosmutation),
             in which once you are connected with the Cosmic Light or Energy,
             you begin to live Meditation and Yoga twenty-four hours a day.
           </p>
         </Reveal>
         <Reveal delay={100}>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#57534a] md:text-base">
-            Our other courses include Yoga Teacher Training, in which we
-            offer intensive training in Yogasanas and alignment, Pranayama,
-            Mudras and Bandhas, alongside very effective and unique
-            meditation techniques taught by highly qualified and
-            exceptional teachers. We also offer programmes in volunteering,
-            wellness and stress management, the accent of which is
-            rejuvenation of body, mind and spirit through yogic exercise,
-            breathing, diet, nature cure, massage and Ayurvedic treatment —
-            customised for individuals and groups.
+            Our Yoga Teacher Training offers intensive training in Yogasanas
+            and alignment, Pranayama, Mudras and Bandhas, alongside unique
+            meditation techniques taught by highly qualified teachers. Our
+            Yoga Retreats share the same place at a more relaxed daily pace,
+            with a certificate of appreciation on completion.
           </p>
         </Reveal>
       </section>
@@ -86,7 +83,7 @@ export default function AboutPage() {
               <RevealImage className="relative aspect-square bg-[#33312b]">
                 <Image
                   src="/teacher-krishnaji-v2.jpg"
-                  alt="Krishna Sarvadaman Banerji"
+                  alt="Sarvadaman Banerji"
                   fill
                   sizes="(min-width: 768px) 280px, 60vw"
                   placeholder="blur"
@@ -95,7 +92,7 @@ export default function AboutPage() {
                 />
               </RevealImage>
               <p className="font-display mt-4 text-lg">
-                Krishna Sarvadaman Banerji
+                Sarvadaman Banerji
               </p>
               <p className="mt-1 text-xs tracking-widest-plus uppercase text-[#8a8375]">
                 Founder
@@ -131,7 +128,7 @@ export default function AboutPage() {
                   Vinyasa Yoga, Pranayama, Yoga Sutras and Spontaneous
                   Kriya Meditation — living a life in awareness. I
                   personally teach Kriya Meditation; Alankrita, Rajat and
-                  Gaurav teach the various aspects of yoga. All of our
+                  Vikash teach the various aspects of yoga. All of our
                   teachers are masters in their craft, and are themselves
                   living a life of yoga.
                 </p>

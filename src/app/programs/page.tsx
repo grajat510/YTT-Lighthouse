@@ -7,7 +7,7 @@ import { getFutureBatches } from "@/lib/calendar";
 export const metadata: Metadata = {
   title: "Programs — Light House",
   description:
-    "Yoga Teacher Training, Yoga Retreats and the Master's Training Course at Light House, Rishikesh — curriculum, schedule, dates and fees.",
+    "Yoga Teacher Training and Yoga Retreats at Light House, Rishikesh — curriculum, schedule, dates and fees.",
 };
 
 const CURRICULUM = [
@@ -26,18 +26,17 @@ const CURRICULUM = [
 ];
 
 const SCHEDULE = [
-  { time: "07:00 – 07:30 AM", activity: "Shatkarma (first 4 days)" },
-  { time: "07:30 – 09:00 AM", activity: "Vinyasa Yoga" },
-  { time: "09:00 – 09:30 AM", activity: "Pranayam" },
-  { time: "10:00 – 10:30 AM", activity: "Breakfast" },
-  { time: "11:00 – 11:45 AM", activity: "Anatomy" },
-  { time: "11:45 – 12:30 PM", activity: "Yoga Alignment" },
-  { time: "01:00 – 02:00 PM", activity: "Lunch" },
-  { time: "03:30 – 04:00 PM", activity: "Tea Break" },
-  { time: "04:00 – 05:00 PM", activity: "Yoga Philosophy" },
-  { time: "05:00 – 06:30 PM", activity: "Hatha Yoga" },
-  { time: "06:30 – 07:30 PM", activity: "Meditation / Mantra Chanting / Aura Healing / Kriya" },
-  { time: "08:00 – 09:00 PM", activity: "Dinner" },
+  { time: "06:30 – 08:00 AM", activity: "Hatha Yoga and Pranayama" },
+  { time: "09:00 – 09:30 AM", activity: "Breakfast" },
+  { time: "10:30 – 11:30 AM", activity: "Yoga Anatomy" },
+  { time: "12:00 – 01:00 PM", activity: "Yoga Alignment" },
+  { time: "01:00 – 01:30 PM", activity: "Lunch" },
+  { time: "01:30 – 04:00 PM", activity: "Break" },
+  { time: "04:00 – 05:15 PM", activity: "Ashtanga Vinyasa Yoga and Shatkarma" },
+  { time: "05:15 – 05:30 PM", activity: "Tea" },
+  { time: "05:30 – 06:30 PM", activity: "Philosophy" },
+  { time: "06:30 – 07:30 PM", activity: "Meditation" },
+  { time: "07:30 – 08:00 PM", activity: "Dinner" },
 ];
 
 const INCLUSIONS = [
@@ -199,8 +198,8 @@ export default function ProgramsPage() {
               A day at Light House
             </h2>
             <p className="mt-4 max-w-lg text-xs text-[#8a8375]">
-              The itinerary remains the same throughout, though schedules
-              may be subject to change.
+              Tentative outline for Yoga Teacher Training — subject to change.
+              Yoga Retreats follow a slower day with free mornings (see homepage).
             </p>
           </Reveal>
           <Reveal delay={100}>

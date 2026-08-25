@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 
+const APPLY_HREF =
+  "https://lighthousekrishna.com/course-registration/yoga-teacher-training/";
+
 export default function Hero() {
   return (
     <section id="top" className="pt-20">
-      <div className="relative h-[calc(100svh-5rem)] min-h-[420px] w-full overflow-hidden">
-        {/* Mobile: hero-v2, cropped/zoomed full-bleed. Desktop: hero-v4, full-bleed edge-to-edge. */}
+      <div className="relative h-[calc(100svh-5rem)] min-h-[480px] w-full overflow-hidden">
         <Image
           src="/hero-v2.jpg"
           alt="Light House, on the banks of the Ganges in Rishikesh"
@@ -23,26 +25,48 @@ export default function Hero() {
           className="img-subtle animate-video-fade-in hidden object-cover md:block"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-6 pb-10 md:px-10 md:pb-16">
           <Reveal>
-            <p className="mb-3 text-xs tracking-widest-plus uppercase text-white/90">
-              Rishikesh, India
+            <p className="mb-3 text-xs tracking-widest-plus uppercase text-[#f7f4ee]/90">
+              Rishikesh, on the Ganges
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="font-display max-w-2xl text-4xl font-light leading-[1.1] text-white md:text-6xl">
-              A Mind Blowing Yoga Place.
+            <h1 className="font-display max-w-3xl text-4xl font-light leading-[1.1] text-[#f7f4ee] md:text-6xl">
+              Yoga Teacher Training and Retreats at Light House
             </h1>
           </Reveal>
+          <Reveal delay={150}>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-[#f7f4ee]/85 md:text-base">
+              A mind-blowing yoga place.
+            </p>
+          </Reveal>
           <Reveal delay={200}>
-            <a
-              href="#destinations"
-              className="mt-6 inline-block border border-white px-6 py-3 text-xs tracking-widest-plus uppercase text-white transition-colors hover:bg-white hover:text-[#22201c]"
-            >
-              Discover more
-            </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#ytt"
+                className="inline-block border border-[#f7f4ee] bg-[#f7f4ee] px-6 py-3 text-xs tracking-widest-plus uppercase text-[#22201c] transition-colors hover:bg-transparent hover:text-[#f7f4ee]"
+              >
+                Yoga Teacher Training
+              </a>
+              <a
+                href="#yrt"
+                className="inline-block border border-[#f7f4ee] px-6 py-3 text-xs tracking-widest-plus uppercase text-[#f7f4ee] transition-colors hover:bg-[#f7f4ee] hover:text-[#22201c]"
+              >
+                Yoga Retreat
+              </a>
+              <a
+                href={APPLY_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-conversion="apply"
+                className="inline-block px-4 py-3 text-xs tracking-widest-plus uppercase text-[#f7f4ee]/80 underline decoration-[#f7f4ee]/40 underline-offset-4 transition-colors hover:text-[#f7f4ee]"
+              >
+                Apply
+              </a>
+            </div>
           </Reveal>
         </div>
       </div>
