@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import AboutHeroVideo from "@/components/AboutHeroVideo";
 import Reveal from "@/components/Reveal";
 import RevealImage from "@/components/RevealImage";
 import { shimmerPlaceholder } from "@/lib/placeholder";
@@ -14,29 +15,18 @@ export default function AboutPage() {
   return (
     <>
       <section className="min-w-0 pt-20">
-        <div className="relative aspect-[16/9] w-full overflow-hidden md:aspect-[21/9]">
-          <Image
-            src="/teacher-krishnaji-v2.jpg"
-            alt="Krishnaji, founder of Light House"
-            fill
-            priority
-            sizes="100vw"
-            className="img-subtle object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 px-6 pb-10 md:px-10 md:pb-16">
-            <Reveal>
-              <p className="mb-3 text-xs tracking-widest-plus uppercase text-white/90">
-                About Us
-              </p>
-            </Reveal>
-            <Reveal delay={100}>
-              <h1 className="font-display max-w-2xl text-4xl font-light leading-[1.1] text-white md:text-6xl">
-                A &ldquo;Mindblowing&rdquo; Yoga Place
-              </h1>
-            </Reveal>
-          </div>
-        </div>
+        <AboutHeroVideo>
+          <Reveal>
+            <p className="mb-3 text-xs tracking-widest-plus uppercase text-white/90">
+              About Us
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <h1 className="font-display max-w-2xl text-4xl font-light leading-[1.1] text-white md:text-6xl">
+              A &ldquo;Mindblowing&rdquo; Yoga Place
+            </h1>
+          </Reveal>
+        </AboutHeroVideo>
       </section>
 
       <section className="mx-auto min-w-0 max-w-[1600px] px-6 py-16 md:px-10 md:py-24">

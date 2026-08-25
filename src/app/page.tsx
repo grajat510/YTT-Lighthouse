@@ -10,6 +10,7 @@ import ProgrammeDirector from "@/components/ProgrammeDirector";
 import Accreditations from "@/components/Accreditations";
 import Faq from "@/components/Faq";
 import StickyMobileCta from "@/components/StickyMobileCta";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Light House — Yoga Teacher Training & Retreats, Rishikesh",
@@ -74,6 +75,29 @@ export default function Home() {
       <ProgrammeDirector />
       <Accreditations />
       <Faq />
+      <section className="mx-auto max-w-[1600px] px-6 pb-16 md:px-10 md:pb-24">
+        <Reveal>
+          <p className="mb-4 text-xs tracking-widest-plus uppercase text-[#8a8375]">
+            Also at Light House
+          </p>
+          <h2 className="font-display max-w-lg text-4xl font-light leading-snug md:text-5xl">
+            MTC and PANKH
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#57534a]">
+            After YTT or YRT, you may stay on for the Master&rsquo;s Training
+            Course (MTC): five days of Cosmutation with Krishnaji, offered as an
+            add-on when he is available, with an extra fee of 275 EUR / 299 USD.
+            There is also Karma Yoga at PANKH, the creative school founded by
+            Alankrita Banerjee, where you can volunteer in seva with food and
+            accommodation included.
+          </p>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#8a8375]">
+            Extra charges in brief: dual certification on the 200-Hour YTT is an
+            additional payment. Air conditioning is ₹500 (~$6 USD) per room, per
+            day, shared among occupants.
+          </p>
+        </Reveal>
+      </section>
       <StickyMobileCta />
       <div className="h-20 md:hidden" aria-hidden />
     </>
