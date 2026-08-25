@@ -39,6 +39,7 @@ export type Course = {
   batches?: { range: string; month: string; year: number; startDate: string }[];
   stats: { value: string; label: string }[];
   paragraphs: string[];
+  inclusions?: string[];
   highlights: Highlight[];
   schedule?: { time: string; activity: string; period: string }[];
   pricing: { label: string; price: string }[];
@@ -104,6 +105,15 @@ export const COURSES: Course[] = [
     paragraphs: [
       "A 15-day foundational training in Yogasanas and alignment, Pranayama, Mudras and Bandhas, alongside very effective and unique meditation techniques, taught by highly qualified and exceptional teachers.",
       "We are affiliated to Yoga Alliance International and the World Yoga Federation. After successful completion, you can become a Certified Yoga Teacher (CYT).",
+    ],
+    inclusions: [
+      "Accommodation in our serene rooms",
+      "3 vegetarian meals per day",
+      "Yoga manual",
+      "Jal Neti & Sutra Neti material",
+      "Bhagavad Gita text",
+      "A book on Saints of India",
+      "Memento and certificate on successful completion",
     ],
     highlights: [
       {
@@ -174,6 +184,15 @@ export const COURSES: Course[] = [
     paragraphs: [
       "A comprehensive 20-day training building on the 100-Hour syllabus, with deeper study of Yoga Anatomy, Kriyas, Mudras and Meditation, plus placement assistance on completion.",
       "Dual certification (Yoga Alliance International and World Yoga Federation) is available for this course, subject to an extra payment.",
+    ],
+    inclusions: [
+      "Accommodation in our serene rooms",
+      "3 vegetarian meals per day",
+      "Yoga manual",
+      "Jal Neti & Sutra Neti material",
+      "Bhagavad Gita text",
+      "A book on Saints of India",
+      "Memento and certificate on successful completion",
     ],
     highlights: [
       {

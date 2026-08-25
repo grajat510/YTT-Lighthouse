@@ -10,16 +10,6 @@ import { getNextBatchLabel } from "@/lib/calendar";
 const APPLY_HREF =
   "https://lighthousekrishna.com/course-registration/yoga-teacher-training/";
 
-const INCLUSIONS = [
-  "Accommodation in our serene rooms",
-  "3 vegetarian meals per day",
-  "Yoga manual",
-  "Jal Neti & Sutra Neti material",
-  "Bhagavad Gita text",
-  "A book on Saints of India",
-  "Memento and certificate on successful completion",
-];
-
 const CHAPTERS = [
   {
     id: "ytt",
@@ -31,7 +21,6 @@ const CHAPTERS = [
     scheduleSlug: "200-hour-ytt",
     scheduleNote:
       "A day of practice, learning and contemplation. Tentative outline — subject to change.",
-    showInclusions: true,
     dualCertNote:
       "Dual certification (YAI + WYF) is available for the 200-Hour course only, subject to an extra payment.",
     img: "/practice-asana.jpg",
@@ -47,7 +36,6 @@ const CHAPTERS = [
     scheduleSlug: "15-day-retreat",
     scheduleNote:
       "Relaxed pace with open mornings. Tentative outline — subject to change.",
-    showInclusions: false,
     dualCertNote: null,
     img: "/practice-terrace.jpg",
     alt: "Meditation on the terrace overlooking the valley",
@@ -96,6 +84,20 @@ function CourseSummary({ course }: { course: Course }) {
           </div>
         </div>
       )}
+      {course.inclusions && course.inclusions.length > 0 && (
+        <div className="mt-6 border-t border-[#22201c]/10 pt-5">
+          <p className="mb-3 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
+            What&rsquo;s Included — {course.title}
+          </p>
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {course.inclusions.map((item) => (
+              <li key={item} className="text-sm text-[#57534a]">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
@@ -108,12 +110,6 @@ export default function CourseDetails() {
           .map((slug) => COURSES.find((c) => c.slug === slug))
           .filter((c): c is Course => Boolean(c));
         const scheduleCourse = COURSES.find((c) => c.slug === chapter.scheduleSlug);
-        const syllabusCourses =
-          chapter.id === "ytt"
-            ? courses.filter((course) => course.highlights.length > 0)
-            : [courses[courses.length - 1] ?? courses[0]].filter(
-                (course): course is Course => Boolean(course && course.highlights.length > 0)
-              );
 
         return (
           <div
@@ -134,70 +130,61 @@ export default function CourseDetails() {
                 </p>
               </Reveal>
 
-              <div className="mt-10 grid grid-cols-1 gap-8 md:mt-14 md:grid-cols-2 md:gap-12">
-                <Reveal delay={80}>
-                  <RevealImage className="relative aspect-[4/3] bg-[#e7e2d6]">
-                    <Image
-                      src={chapter.img}
-                      alt={chapter.alt}
-                      fill
-                      quality={90}
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      placeholder="blur"
-                      blurDataURL={shimmerPlaceholder(1200, 900)}
-                      className="object-cover"
-                    />
-                  </RevealImage>
-                </Reveal>
-                <div className="space-y-6">
-                  {courses.map((course, i) => (
-                    <Reveal key={course.slug} delay={100 + i * 60}>
-                      <CourseSummary course={course} />
-                    </Reveal>
-                  ))}
-                </div>
-              </div>
+              {courses.map((course, i) => {
+                const isLast = i === courses.length - 1;
+                const showCovers =
+                  course.highlights.length > 0 && (chapter.id === "ytt" || isLast);
 
-              {chapter.dualCertNote && (
-                <Reveal delay={120}>
-                  <p className="mt-8 max-w-2xl text-xs leading-relaxed text-[#8a8375]">
-                    {chapter.dualCertNote}
-                  </p>
-                </Reveal>
-              )}
+                return (
+                  <div key={course.slug} className={i === 0 ? "mt-10 md:mt-14" : "mt-16 md:mt-24"}>
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+                      <Reveal delay={80}>
+                        <RevealImage className="relative aspect-[4/3] bg-[#e7e2d6]">
+                          <Image
+                            src={chapter.img}
+                            alt={chapter.alt}
+                            fill
+                            quality={90}
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            placeholder="blur"
+                            blurDataURL={shimmerPlaceholder(1200, 900)}
+                            className="object-cover"
+                          />
+                        </RevealImage>
+                      </Reveal>
+                      <Reveal delay={100}>
+                        <CourseSummary course={course} />
+                      </Reveal>
+                    </div>
 
-              {chapter.showInclusions && (
-                <Reveal delay={140} className="mt-12 md:mt-16">
-                  <p className="mb-4 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
-                    Inclusions
-                  </p>
-                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
-                    {INCLUSIONS.map((item) => (
-                      <li key={item} className="text-sm text-[#57534a]">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
-              )}
-
-              {syllabusCourses.map((course) => (
-                <div key={course.slug} className="mt-12 md:mt-16 md:text-center">
-                  <p className="mb-4 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
-                    Covers
-                  </p>
-                  <h4 className="font-display max-w-lg text-2xl font-light leading-snug md:mx-auto md:text-3xl">
-                    {chapter.id === "ytt" ? (
-                      <>What You&rsquo;ll Learn — {course.title}</>
-                    ) : (
-                      <>What You&rsquo;ll Learn</>
+                    {chapter.dualCertNote && isLast && (
+                      <Reveal delay={120}>
+                        <p className="mt-8 max-w-2xl text-xs leading-relaxed text-[#8a8375]">
+                          {chapter.dualCertNote}
+                        </p>
+                      </Reveal>
                     )}
-                  </h4>
-                  <div className="mt-8 max-w-xl text-left md:max-w-none">
-                    <CoversCarousel items={course.highlights} />
+
+                    {showCovers && (
+                      <div className="mt-12 md:mt-16 md:text-center">
+                        <p className="mb-4 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
+                          Covers
+                        </p>
+                        <h4 className="font-display max-w-lg text-2xl font-light leading-snug md:mx-auto md:text-3xl">
+                          {chapter.id === "ytt" ? (
+                            <>What You&rsquo;ll Learn — {course.title}</>
+                          ) : (
+                            <>What You&rsquo;ll Learn</>
+                          )}
+                        </h4>
+                        <div className="mt-8 max-w-xl text-left md:max-w-none">
+                          <CoversCarousel items={course.highlights} />
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
               {scheduleCourse?.schedule && (
                 <div className="mt-12 md:mt-16 md:text-center">
