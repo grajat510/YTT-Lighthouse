@@ -22,6 +22,7 @@ export default function ProgrammeDirector() {
               sizes="(min-width: 768px) 280px, 60vw"
               placeholder="blur"
               blurDataURL={shimmerPlaceholder(600, 600)}
+              quality={90}
               className="object-cover"
             />
           </RevealImage>
@@ -32,7 +33,7 @@ export default function ProgrammeDirector() {
         </Reveal>
 
         <Reveal delay={150}>
-          <blockquote className="font-display max-w-2xl text-xl font-light italic leading-snug text-[#22201c] md:text-2xl">
+          <blockquote className="font-display max-w-2xl text-2xl font-light italic leading-snug text-[#22201c] md:text-3xl">
             &ldquo;The greatest joy is in giving — giving love, giving a
             hug, or a smile. Giving makes you whole and complete. I live
             only to give.&rdquo;

@@ -31,7 +31,7 @@ export default function WhyLighthouse() {
         <p className="mb-4 text-xs tracking-widest-plus uppercase text-[#8a8375]">
           The Place
         </p>
-        <h2 className="font-display max-w-lg text-3xl font-light leading-snug md:text-4xl">
+        <h2 className="font-display max-w-lg text-4xl font-light leading-snug md:text-5xl">
           Food &amp; Accommodation
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#57534a]">
@@ -51,6 +51,7 @@ export default function WhyLighthouse() {
                 sizes="(min-width: 768px) 33vw, 100vw"
                 placeholder="blur"
                 blurDataURL={shimmerPlaceholder(900, 675)}
+                quality={90}
                 className="img-subtle object-cover"
               />
             </RevealImage>

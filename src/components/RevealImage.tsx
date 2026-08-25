@@ -32,7 +32,7 @@ export default function RevealImage({
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <div className={`photo-reveal h-full w-full ${visible ? "is-visible" : ""}`}>
+      <div className={`photo-reveal relative h-full w-full ${visible ? "is-visible" : ""}`}>
         {children}
       </div>
     </div>

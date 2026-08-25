@@ -32,7 +32,7 @@ export default function Faq() {
     <section id="faq" className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
       <Reveal>
         <p className="mb-4 text-xs tracking-widest-plus uppercase text-[#8a8375]">FAQ</p>
-        <h2 className="font-display max-w-lg text-3xl font-light leading-snug md:text-4xl">
+        <h2 className="font-display max-w-lg text-4xl font-light leading-snug md:text-5xl">
           Before you apply
         </h2>
       </Reveal>
@@ -41,7 +41,7 @@ export default function Faq() {
         {FAQS.map((item, i) => (
           <Reveal key={item.q} delay={i * 40}>
             <details className="group py-5">
-              <summary className="cursor-pointer list-none font-display text-lg font-light text-[#22201c] marker:content-none [&::-webkit-details-marker]:hidden">
+              <summary className="cursor-pointer list-none font-display text-xl font-light text-[#22201c] marker:content-none [&::-webkit-details-marker]:hidden">
                 <span className="flex items-start justify-between gap-4">
                   {item.q}
                   <span className="mt-1 shrink-0 text-[#8a8375] transition-transform group-open:rotate-45">

@@ -7,7 +7,7 @@ export default function FounderIntention() {
         <p className="mb-6 text-xs tracking-widest-plus uppercase text-[#8a8375]">
           Our Intention
         </p>
-        <blockquote className="font-display text-2xl font-light leading-snug text-[#22201c] md:text-4xl">
+        <blockquote className="font-display text-3xl font-light leading-snug text-[#22201c] md:text-5xl">
           &ldquo;Whosoever comes here must go back connected to the Divine
           Energy and be a Light unto oneself.&rdquo;
         </blockquote>

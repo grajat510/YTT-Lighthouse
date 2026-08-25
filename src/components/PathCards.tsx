@@ -35,7 +35,7 @@ export default function PathCards() {
     <section id="paths" className="mx-auto max-w-[1600px] px-6 pb-8 md:px-10 md:pb-12">
       <Reveal className="mb-10 text-center md:mb-14">
         <span className="mb-6 inline-block h-px w-16 bg-[#22201c]/25" />
-        <h2 className="font-display text-2xl font-light md:text-3xl">
+        <h2 className="font-display text-3xl font-light md:text-4xl">
           Two paths, one place
         </h2>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#57534a]">
@@ -62,13 +62,14 @@ export default function PathCards() {
                     sizes="(min-width: 768px) 50vw, 100vw"
                     placeholder="blur"
                     blurDataURL={shimmerPlaceholder(1200, 900)}
+                    quality={90}
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </RevealImage>
                 <p className="mt-5 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
                   {path.eyebrow}
                 </p>
-                <h3 className="font-display mt-2 text-2xl font-light md:text-3xl">
+                <h3 className="font-display mt-2 text-3xl font-light md:text-4xl">
                   {path.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#57534a]">

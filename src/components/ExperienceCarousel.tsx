@@ -67,7 +67,7 @@ export default function ExperienceCarousel({
       <section id={id} className="min-w-0 scroll-mt-24 py-20 md:py-28">
         <Reveal className="mx-auto mb-12 flex max-w-[1600px] flex-col items-center px-6 text-center md:mb-16 md:px-10">
           <span className="mb-6 h-px w-16 bg-[#22201c]/25" />
-          <h2 className="font-display text-2xl font-light md:text-3xl">{heading}</h2>
+          <h2 className="font-display text-3xl font-light md:text-4xl">{heading}</h2>
         </Reveal>
         <div className="pl-6 md:pl-10">{cards}</div>
       </section>
@@ -79,7 +79,7 @@ export default function ExperienceCarousel({
       <div className="grid grid-cols-1 gap-10 pl-6 md:gap-x-12 md:pl-10 lg:grid-cols-[360px_1fr]">
         <Reveal>
           <div>
-            <h2 className="font-display text-2xl font-light md:text-3xl">{heading}</h2>
+            <h2 className="font-display text-3xl font-light md:text-4xl">{heading}</h2>
             {description && (
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#57534a]">
                 {description}

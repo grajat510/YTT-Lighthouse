@@ -108,7 +108,12 @@ export default function CourseDetails() {
           .map((slug) => COURSES.find((c) => c.slug === slug))
           .filter((c): c is Course => Boolean(c));
         const scheduleCourse = COURSES.find((c) => c.slug === chapter.scheduleSlug);
-        const highlightsCourse = courses[courses.length - 1] ?? courses[0];
+        const syllabusCourses =
+          chapter.id === "ytt"
+            ? courses.filter((course) => course.highlights.length > 0)
+            : [courses[courses.length - 1] ?? courses[0]].filter(
+                (course): course is Course => Boolean(course && course.highlights.length > 0)
+              );
 
         return (
           <div
@@ -121,10 +126,10 @@ export default function CourseDetails() {
                 <p className="text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
                   {chapter.eyebrow}
                 </p>
-                <h2 className="font-display mt-3 max-w-2xl text-3xl font-light leading-snug md:text-4xl">
+                <h2 className="font-display mt-3 max-w-2xl text-4xl font-light leading-snug md:text-5xl">
                   {chapter.title}
                 </h2>
-                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#57534a]">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#57534a]">
                   {chapter.intro}
                 </p>
               </Reveal>
@@ -136,6 +141,7 @@ export default function CourseDetails() {
                       src={chapter.img}
                       alt={chapter.alt}
                       fill
+                      quality={90}
                       sizes="(min-width: 768px) 50vw, 100vw"
                       placeholder="blur"
                       blurDataURL={shimmerPlaceholder(1200, 900)}
@@ -175,26 +181,30 @@ export default function CourseDetails() {
                 </Reveal>
               )}
 
-              {highlightsCourse && highlightsCourse.highlights.length > 0 && (
-                <div className="mt-12 md:mt-16 md:text-center">
+              {syllabusCourses.map((course) => (
+                <div key={course.slug} className="mt-12 md:mt-16 md:text-center">
                   <p className="mb-4 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
                     Covers
                   </p>
-                  <h4 className="font-display max-w-lg text-xl font-light leading-snug md:mx-auto md:text-2xl">
-                    What You&rsquo;ll Learn
+                  <h4 className="font-display max-w-lg text-2xl font-light leading-snug md:mx-auto md:text-3xl">
+                    {chapter.id === "ytt" ? (
+                      <>What You&rsquo;ll Learn — {course.title}</>
+                    ) : (
+                      <>What You&rsquo;ll Learn</>
+                    )}
                   </h4>
                   <div className="mt-8 max-w-xl text-left md:max-w-none">
-                    <CoversCarousel items={highlightsCourse.highlights} />
+                    <CoversCarousel items={course.highlights} />
                   </div>
                 </div>
-              )}
+              ))}
 
               {scheduleCourse?.schedule && (
                 <div className="mt-12 md:mt-16 md:text-center">
                   <p className="mb-4 text-[10px] tracking-widest-plus uppercase text-[#8a8375]">
                     Daily Schedule
                   </p>
-                  <h4 className="font-display max-w-lg text-xl font-light leading-snug md:mx-auto md:text-2xl">
+                  <h4 className="font-display max-w-lg text-2xl font-light leading-snug md:mx-auto md:text-3xl">
                     A day at Light House
                   </h4>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-[#57534a] md:mx-auto">

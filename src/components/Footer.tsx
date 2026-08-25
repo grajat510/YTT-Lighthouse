@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="mt-auto bg-[#efeadf] px-6 py-16 md:px-10">
       <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-10 text-sm md:grid-cols-4">
         <div className="col-span-2 md:col-span-1">
-          <p className="font-display text-lg tracking-widest-plus uppercase">
+          <p className="font-display text-xl tracking-widest-plus uppercase">
             Light House
           </p>
           <p className="mt-4 max-w-[220px] text-xs leading-relaxed text-[#57534a]">
@@ -106,17 +106,24 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://wa.me/919058729492"
+                href="https://wa.me/916395891689"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-conversion="whatsapp"
                 className="transition-colors hover:text-[#22201c]"
               >
-                +91 9058729492
+                +91 6395891689
               </a>
-              <span className="block text-[10px] text-[#8a8375]">YTT / YRT queries</span>
+              <span className="block text-[10px] text-[#8a8375]">
+                Please send queries only through WhatsApp
+              </span>
             </li>
-            <li>+91 9495415951</li>
+            <li>
+              <a href="tel:+917535012041" className="transition-colors hover:text-[#22201c]">
+                +91 7535012041
+              </a>
+              <span className="block text-[10px] text-[#8a8375]">Mobile</span>
+            </li>
             <li>
               <a
                 href="https://instagram.com/lighthousekrishna"

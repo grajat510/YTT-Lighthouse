@@ -26,7 +26,7 @@ export default function PrivacyPage() {
             <a href="mailto:lighthousekrishna@gmail.com" className="underline">
               lighthousekrishna@gmail.com
             </a>
-            , +91 9058729492.
+            , WhatsApp +91 6395891689, mobile +91 7535012041.
           </p>
         </section>
 
