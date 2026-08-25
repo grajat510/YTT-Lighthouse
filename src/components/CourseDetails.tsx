@@ -138,7 +138,7 @@ export default function CourseDetails() {
                 return (
                   <div key={course.slug} className={i === 0 ? "mt-10 md:mt-14" : "mt-16 md:mt-24"}>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
-                      <Reveal delay={80}>
+                      <Reveal delay={80} className={i > 0 ? "hidden md:block" : undefined}>
                         <RevealImage className="relative aspect-[4/3] bg-[#e7e2d6]">
                           <Image
                             src={chapter.img}
