@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 const ENTER_MS = 700;
 const HOLD_MS = 2200;
@@ -57,12 +56,11 @@ export default function SplashScreen() {
         fading ? "opacity-0" : "opacity-100"
       }`}
     >
-      <Image
+      <img
         src="/splash-meditation.png"
         alt="Light House"
         width={1330}
         height={1182}
-        priority
         className={`h-auto w-40 md:w-56 ${
           breathing
             ? "animate-breathe"
