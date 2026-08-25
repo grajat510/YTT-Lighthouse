@@ -1,31 +1,45 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 const APPLY_HREF =
   "https://lighthousekrishna.com/course-registration/yoga-teacher-training/";
 
+const HERO_ALT = "Light House, on the banks of the Ganges in Rishikesh";
+
 export default function Hero() {
+  const common = { alt: HERO_ALT, sizes: "100vw", quality: 90 as const };
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    ...common,
+    src: "/hero-v4.jpg",
+    width: 1920,
+    height: 1080,
+  });
+  const {
+    props: { srcSet: mobile, className: _className, style, ...img },
+  } = getImageProps({
+    ...common,
+    src: "/hero-v2.jpg",
+    width: 1080,
+    height: 1350,
+  });
+
   return (
     <section id="top" className="pt-20">
       <div className="relative h-[calc(100svh-5rem)] min-h-[480px] w-full overflow-hidden">
-        <Image
-          src="/hero-v2.jpg"
-          alt="Light House, on the banks of the Ganges in Rishikesh"
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-          className="img-subtle animate-video-fade-in object-cover md:hidden"
-        />
-        <Image
-          src="/hero-v4.jpg"
-          alt="Light House, on the banks of the Ganges in Rishikesh"
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-          className="img-subtle animate-video-fade-in hidden object-cover md:block"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={desktop} />
+          <img
+            {...img}
+            alt={HERO_ALT}
+            srcSet={mobile}
+            fetchPriority="high"
+            decoding="async"
+            className="img-subtle animate-video-fade-in absolute inset-0 h-full w-full object-cover"
+            style={{ ...style, objectFit: "cover" }}
+          />
+        </picture>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
