@@ -62,7 +62,8 @@ export default function TermsPage() {
         <section>
           <h2 className="font-display text-xl text-[#22201c]">Contact</h2>
           <p className="mt-3">
-            YTT / YRT queries: +91 9058729492 ·{" "}
+            Please send queries only through WhatsApp: +91 6395891689 · Mobile: +91
+            7535012041 ·{" "}
             <a href="mailto:lighthousekrishna@gmail.com" className="underline">
               lighthousekrishna@gmail.com
             </a>

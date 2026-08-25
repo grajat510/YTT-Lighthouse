@@ -5,7 +5,7 @@ const APPLY_HREF =
 
 export default function StickyMobileCta() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#22201c]/10 bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-sm md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#22201c]/10 bg-[#f3eee4]/95 px-4 py-3 backdrop-blur-sm md:hidden">
       <div className="mx-auto flex max-w-lg gap-2">
         <a
           href={APPLY_HREF}
@@ -17,7 +17,7 @@ export default function StickyMobileCta() {
           Apply
         </a>
         <a
-          href="https://wa.me/919058729492"
+          href="https://wa.me/916395891689"
           target="_blank"
           rel="noopener noreferrer"
           data-conversion="whatsapp"

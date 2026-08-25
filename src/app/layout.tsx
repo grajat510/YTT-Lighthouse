@@ -10,6 +10,7 @@ const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 const body = Inter({
@@ -33,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f7f4ee] text-[#22201c]">
+      <body className="min-h-full flex flex-col text-[#22201c]">
         <Analytics />
         <SplashScreen />
         <Nav />

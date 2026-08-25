@@ -14,6 +14,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
+          quality={90}
           className="img-subtle animate-video-fade-in object-cover md:hidden"
         />
         <Image
@@ -22,6 +23,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
+          quality={90}
           className="img-subtle animate-video-fade-in hidden object-cover md:block"
         />
 
@@ -34,7 +36,7 @@ export default function Hero() {
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="font-display max-w-3xl text-4xl font-light leading-[1.1] text-[#f7f4ee] md:text-6xl">
+            <h1 className="font-display max-w-3xl text-5xl font-light leading-[1.1] text-[#f7f4ee] md:text-7xl">
               Yoga Teacher Training and Retreats at Light House
             </h1>
           </Reveal>

@@ -16,7 +16,7 @@ Add `gad=1` or rely on `gclid` so the splash screen is skipped for paid traffic.
 
 1. Set `NEXT_PUBLIC_GA_ID` (e.g. `G-XXXXXXXX`) in Vercel / `.env.local`.
 2. Primary conversion: click Apply (`data-conversion="apply"`) → official form.
-3. Secondary: WhatsApp click (`data-conversion="whatsapp"`) and click-to-call `+91 9058729492`.
+3. Secondary: WhatsApp click (`data-conversion="whatsapp"`) and click-to-call `+91 7535012041`.
 4. If Light House can add a thank-you / gtag on their registration confirmation page, import that as the primary offline-adjacent conversion.
 
 ## Campaigns

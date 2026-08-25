@@ -46,6 +46,7 @@ export default function FeatureCard({
           sizes={sizes}
           placeholder="blur"
           blurDataURL={shimmerPlaceholder(imgSize.w, imgSize.h)}
+          quality={90}
           className={`img-subtle object-cover select-none [-webkit-user-drag:none] [-webkit-touch-callout:none] ${imgPositionClass} transition-transform duration-[1200ms] ease-out group-hover:scale-105`}
         />
         {date && (
