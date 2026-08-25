@@ -12,7 +12,7 @@ export default function Accreditations() {
   return (
     <section className="py-16 md:py-20">
       <Reveal className="mx-auto flex max-w-[1600px] flex-col items-center px-6 text-center md:px-10">
-        <span className="mb-6 h-px w-16 bg-[#22201c]/25" />
+        <span className="mb-6 h-px w-16 bg-sage/50" />
         <p className="mb-10 text-xs tracking-widest-plus uppercase text-[#8a8375] md:mb-14">
           Affiliated &amp; Certified
         </p>

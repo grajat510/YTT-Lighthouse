@@ -3,11 +3,26 @@
 :root {
   --background: #f3eee4;
   --foreground: #22201c;
+
+  /* Palette drawn from the place itself, not a generic template default:
+     sage/forest greens from the riverside and lawn photography, a soft
+     river-stone blue-grey, and the warm clay/dusk tones already in use
+     for CTAs and price accents. Used sparingly, as accents. */
+  --color-sage: #7c8a68;
+  --color-sage-deep: #5c6a4c;
+  --color-river-stone: #8a9aa0;
+  --color-clay: #a9762d;
+  --color-dusk: #33456a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-sage: var(--color-sage);
+  --color-sage-deep: var(--color-sage-deep);
+  --color-river-stone: var(--color-river-stone);
+  --color-clay: var(--color-clay);
+  --color-dusk: var(--color-dusk);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
@@ -17,11 +32,32 @@ html {
 }
 
 body {
+  position: relative;
   background:
     radial-gradient(ellipse 90% 55% at 50% -10%, #fbf6ec 0%, transparent 58%),
+    radial-gradient(ellipse 70% 40% at 85% 15%, rgba(124, 138, 104, 0.05) 0%, transparent 60%),
     linear-gradient(180deg, #f6f1e6 0%, #efe8d8 100%);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
+}
+
+/* A very faint paper grain over the whole page — reads as organic
+   material rather than flat digital gradient, at a low enough opacity
+   to leave contrast/accessibility untouched. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1,
@@ -69,8 +105,8 @@ h3,
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -136,6 +172,20 @@ h3,
   animation: video-fade-in 1600ms ease-out both;
 }
 
+/* Hero photo: fades in once, then drifts slowly and indefinitely — the
+   "unhurried" motion feel, combined so both animations run together. */
+.hero-photo {
+  animation:
+    video-fade-in 1600ms ease-out both,
+    ambient-drift 26s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    animation: none !important;
+  }
+}
+
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -143,4 +193,34 @@ h3,
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Slow, unhurried ambient drift for hero/full-bleed photography — a
+   breath-paced Ken Burns rather than a snappy commercial zoom. */
+@keyframes ambient-drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(0, -1.5%, 0);
+  }
+}
+
+.animate-ambient-drift {
+  animation: ambient-drift 26s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-breathe,
+  .photo-reveal,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Soft sage-tinted section — used sparingly to break the cream/navy
+   rhythm and tie a section back to the riverside/forest photography. */
+.section-sage {
+  background: linear-gradient(180deg, rgba(124, 138, 104, 0.08) 0%, rgba(124, 138, 104, 0.03) 100%);
 }

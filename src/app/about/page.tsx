@@ -46,7 +46,7 @@ export default function AboutPage() {
             Enlightenment or Samadhi, which is neither a physical exercise
             nor an intellectual understanding but freedom from fear and
             greed at the root. Light House is a yoga place founded by
-            Krishna Sarvadaman Banerji and is essentially devoted to Yoga
+            Sarvadaman Banerji and is essentially devoted to Yoga
             Teacher Training and Yoga Retreats on the banks of the Ganges,
             alongside the Art of Spontaneous Meditation (Cosmutation),
             in which once you are connected with the Cosmic Light or Energy,
@@ -128,7 +128,7 @@ export default function AboutPage() {
                   Vinyasa Yoga, Pranayama, Yoga Sutras and Spontaneous
                   Kriya Meditation — living a life in awareness. I
                   personally teach Kriya Meditation; Alankrita, Rajat and
-                  Vikash teach the various aspects of yoga. All of our
+                  Gaurav teach the various aspects of yoga. All of our
                   teachers are masters in their craft, and are themselves
                   living a life of yoga.
                 </p>
